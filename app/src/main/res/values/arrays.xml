@@ -11,6 +11,7 @@
         <item>@mipmap/vegdahl</item>
         <item>@mipmap/steve</item>
         <item>@mipmap/cookie_monster</item>
+        <item>@mipmap/ic_launcher</item>
     </array>
 
     <string-array name="spinner_names">
@@ -19,6 +20,7 @@
         <item>Dr. Steven Vegdahl</item>
         <item>Steve Zissou</item>
         <item>Cookie Monster</item>
+        <item>Nathan Travanti</item>
     </string-array>
 
 </resources>
