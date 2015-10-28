@@ -44,6 +44,7 @@ public class TextModActivity extends ActionBarActivity {
     Button upperBtn;
     Button lowerBtn;
 
+    EditText editText;
 
     public Button clearBtn;
 
