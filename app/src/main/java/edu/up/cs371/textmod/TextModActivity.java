@@ -16,8 +16,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
@@ -27,6 +31,10 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
+
+    public Button clearBtn;
+    public EditText editText;
+
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -73,7 +81,25 @@ public class TextModActivity extends ActionBarActivity {
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
+
+        //clear button listener
+
+        editText = (EditText) findViewById(R.id.editText);
+
+        clearBtn = (Button) findViewById(R.id.clearButton);
+
+        clearBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                String text = editText.getText().toString();
+                editText.setText("", TextView.BufferType.EDITABLE);
+            }
+        });
+
+
     }
+
 
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
