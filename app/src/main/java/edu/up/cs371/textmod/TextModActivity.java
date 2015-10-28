@@ -16,8 +16,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
@@ -27,6 +31,12 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
+
+    Button reverseBtn;
+    Button upperBtn;
+    Button lowerBtn;
+
+    EditText editText;
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -47,6 +57,7 @@ public class TextModActivity extends ActionBarActivity {
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
+
         // create adapter with the strings
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, spinnerNames);
@@ -72,6 +83,45 @@ public class TextModActivity extends ActionBarActivity {
 
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
+
+        editText = (EditText) findViewById(R.id.editText);
+
+        //make the reverse button functional
+        reverseBtn = (Button) findViewById(R.id.reverseBtn);
+
+        reverseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = editText.getText().toString();
+                String newText = new StringBuilder(text).reverse().toString();
+                editText.setText(newText, TextView.BufferType.EDITABLE);
+            }
+        });
+
+        //make upper btn functional
+        upperBtn = (Button) findViewById(R.id.upperBtn);
+
+        upperBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = editText.getText().toString();
+                text = text.toUpperCase();
+                editText.setText(text, TextView.BufferType.EDITABLE);
+            }
+        });
+
+        lowerBtn = (Button) findViewById(R.id.lowerBtn);
+
+        lowerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = editText.getText().toString();
+                text = text.toLowerCase();
+                editText.setText(text, TextView.BufferType.EDITABLE);
+            }
+        });
+
+
 
     }
 
