@@ -125,7 +125,8 @@
             android:id="@+id/button2"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:background="@color/button_color"
+            android:onClick="onClickCopyName" />
 
         <Space
             android:layout_width="0sp"
@@ -164,7 +165,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/spinner"
                 android:layout_weight="0"
-                android:background="@color/spinner_color" />
+                android:background="@color/spinner_color"
+                android:nestedScrollingEnabled="true" />
 
             <Space
                 android:layout_width="match_parent"
