@@ -20,9 +20,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+
 
 public class TextModActivity extends ActionBarActivity {
 
@@ -31,6 +34,9 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
+    EditText editText;
+    String spinName;
+    String[] names;
 
     Button reverseBtn;
     Button upperBtn;
@@ -50,6 +56,7 @@ public class TextModActivity extends ActionBarActivity {
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
+        editText = (EditText) findViewById(R.id.editText);
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
@@ -57,6 +64,7 @@ public class TextModActivity extends ActionBarActivity {
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
+        names = getResources().getStringArray(R.array.spinner_names);
 
         // create adapter with the strings
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
@@ -153,6 +161,12 @@ public class TextModActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onClickCopyName(View view) {
+        EditText EditText = (EditText) findViewById(R.id.editText);
+        String currText = EditText.getText().toString();
+        EditText.setText(currText+spinName);
+    }
+
     /**
      * class that handles our spinner's selection events
      */
@@ -167,10 +181,13 @@ public class TextModActivity extends ActionBarActivity {
                                    int position, long id) {
             // set the image to the one corresponding to the index selected by the spinner
             imageView.setImageBitmap(images.get(position));
+            spinName = names[position];
+
+
         }
 
-        /**
-         * @see android.widget.AdapterView.OnItemSelectedListener#onNothingSelected(
+
+        /** @see android.widget.AdapterView.OnItemSelectedListener#onNothingSelected(
          *                  android.widget.AdapterView)
          */
         @Override
