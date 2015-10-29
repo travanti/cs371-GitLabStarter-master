@@ -210,5 +210,15 @@
         android:layout_height="0sp"
         android:layout_weight="1"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alternate"
+        android:id="@+id/button"
+        android:layout_gravity="right"
+        android:background="@color/button_color"
+        android:textColor="@color/button_text_color"
+        android:onClick="onClickAlternate"/>
+
 
 </LinearLayout>

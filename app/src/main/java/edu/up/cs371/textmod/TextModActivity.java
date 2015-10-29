@@ -220,6 +220,27 @@ public class TextModActivity extends ActionBarActivity {
         EditText.setText(currText+spinName);
     }
 
+    public void onClickAlternate(View view) {
+        String curr = editText.getText().toString();
+        String newText = "" ;
+        for(int i=0; i < curr.length(); i++) //user jjnguy from stackoverflow
+        {
+            if(i%2 > 0) {
+                char c = curr.charAt(i);
+                c = Character.toUpperCase(c);
+                newText = newText + c;
+
+            }
+            else{
+                char c = curr.charAt(i);
+                c = Character.toLowerCase(c);
+                newText = newText + c;
+            }
+
+        }
+        editText.setText(newText);
+    }
+
     /**
      * class that handles our spinner's selection events
      */
