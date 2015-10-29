@@ -151,7 +151,7 @@ public class TextModActivity extends ActionBarActivity {
             }
         });
 
-        removeSpcBtn = (Button) findViewById(R.id.remSpcBtn);
+        removeSpcBtn = (Button) findViewById(R.id.remSpcBtn);//
         removeSpcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
