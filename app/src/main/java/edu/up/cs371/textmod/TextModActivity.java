@@ -43,6 +43,7 @@ public class TextModActivity extends ActionBarActivity {
     Button reverseBtn;
     Button upperBtn;
     Button lowerBtn;
+    Button removeSpcBtn;
 
     public Button clearBtn;
 
@@ -103,7 +104,7 @@ public class TextModActivity extends ActionBarActivity {
 
         clearBtn = (Button) findViewById(R.id.clearButton);
 
-        clearBtn.setOnClickListener(new View.OnClickListener(){
+        clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -146,6 +147,16 @@ public class TextModActivity extends ActionBarActivity {
             public void onClick(View v) {
                 String text = editText.getText().toString();
                 text = text.toLowerCase();
+                editText.setText(text, TextView.BufferType.EDITABLE);
+            }
+        });
+
+        removeSpcBtn = (Button) findViewById(R.id.remSpcBtn);
+        removeSpcBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = editText.getText().toString();
+                text = text.replaceAll("\\s", "");
                 editText.setText(text, TextView.BufferType.EDITABLE);
             }
         });
