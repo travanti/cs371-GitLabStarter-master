@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
+    android:background="#ff54fdff"
     tools:context=".TextModActivity">
 
 
@@ -96,7 +96,7 @@
             android:text="@string/lower_button_text"
             android:id="@+id/lowerBtn"
             android:textSize="@dimen/button_font_size"
-            android:textColor="@color/button_text_color"
+            android:textColor="#ff5ffffd"
             android:background="@color/button_color" />
 
         <Space
