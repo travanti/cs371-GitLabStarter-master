@@ -44,6 +44,7 @@ public class TextModActivity extends ActionBarActivity {
     Button upperBtn;
     Button lowerBtn;
     Button removeSpcBtn;
+    Button punctuationBtn;
 
     public Button clearBtn;
 
@@ -162,6 +163,25 @@ public class TextModActivity extends ActionBarActivity {
         });
 
 
+        punctuationBtn = (Button) findViewById(R.id.punctuationButton);
+
+        punctuationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = editText.getText().toString();
+
+                   text= text.replace(".", "");
+                   text =  text.replace(";", "");
+                   text = text.replace("!", "");
+                   text =text.replace("/?", "");
+                   text = text.replace("$", "");
+                text = text.replace(":", "");
+
+                editText.setText(text, TextView.BufferType.EDITABLE);
+                }
+
+
+        });
 
     }
 
