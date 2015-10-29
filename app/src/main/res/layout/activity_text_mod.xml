@@ -93,6 +93,12 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Remove spaces"
+            android:id="@+id/remSpcBtn" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/lower_button_text"
             android:id="@+id/lowerBtn"
             android:textSize="@dimen/button_font_size"
